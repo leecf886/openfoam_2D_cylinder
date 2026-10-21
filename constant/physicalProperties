@@ -1,0 +1,16 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| OpenFOAM Foundation 14: constant-property water                            |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      physicalProperties;
+}
+
+viscosityModel  constant;
+
+// rho = 1000 kg/m3, dynamic viscosity mu = 0.001 Pa.s.
+// The incompressible solver uses kinematic viscosity nu = mu/rho.
+nu              [0 2 -1 0 0 0 0] 1e-06;

@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+cd "$(dirname "$0")"
+
+gmshToFoam mesh/cylinder2D_3d.msh > log.gmshToFoam 2>&1
+
+# Gmsh physical names are retained; set the OpenFOAM geometric patch types.
+foamDictionary constant/polyMesh/boundary \
+    -entry entry0/cylinder/type -set wall > log.setBoundary 2>&1
+foamDictionary constant/polyMesh/boundary \
+    -entry entry0/top/type -set symmetryPlane >> log.setBoundary 2>&1
+foamDictionary constant/polyMesh/boundary \
+    -entry entry0/bottom/type -set symmetryPlane >> log.setBoundary 2>&1
+foamDictionary constant/polyMesh/boundary \
+    -entry entry0/frontAndBack/type -set empty >> log.setBoundary 2>&1

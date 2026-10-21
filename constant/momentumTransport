@@ -1,0 +1,18 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| OpenFOAM Foundation 14: laminar momentum transport                         |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      momentumTransport;
+}
+
+simulationType  laminar;
+
+laminar
+{
+    model           generalisedNewtonian;
+    viscosityModel  Newtonian;
+}

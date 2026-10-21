@@ -1,0 +1,13 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| OpenFOAM Foundation 14: optional parallel decomposition                    |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      decomposeParDict;
+}
+
+numberOfSubdomains 4;
+method          scotch;

@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+cd "$(dirname "$0")"
+
+./Allmesh
+foamRun > log.foamRun 2>&1

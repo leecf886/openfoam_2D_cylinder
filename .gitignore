@@ -1,0 +1,9 @@
+# Solver output and decomposition
+log.*
+postProcessing/
+processor*/
+processors*/
+[1-9]*/
+0.*/
+*.bak
+*~

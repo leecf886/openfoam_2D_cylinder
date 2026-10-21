@@ -1,0 +1,43 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| Cylinder forces and coefficients; span = 0.01 m, diameter = 0.01 m        |
+\*---------------------------------------------------------------------------*/
+
+cylinderForces
+{
+    type            forces;
+    libs            ("libforces.so");
+    patches         (cylinder);
+    p               p;
+    U               U;
+    rho             rhoInf;
+    rhoInf          1000;
+    CofR            (0 0 0.005);
+    executeControl  timeStep;
+    executeInterval 1;
+    writeControl    timeStep;
+    writeInterval   1;
+    log             yes;
+}
+
+cylinderForceCoeffs
+{
+    type            forceCoeffs;
+    libs            ("libforces.so");
+    patches         (cylinder);
+    p               p;
+    U               U;
+    rho             rhoInf;
+    rhoInf          1000;
+    CofR            (0 0 0.005);
+    dragDir         (1 0 0);
+    liftDir         (0 1 0);
+    pitchAxis       (0 0 1);
+    magUInf         0.02;
+    lRef            0.01;
+    Aref            0.0001;
+    executeControl  timeStep;
+    executeInterval 1;
+    writeControl    timeStep;
+    writeInterval   1;
+    log             yes;
+}
