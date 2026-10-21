@@ -7,3 +7,10 @@ processors*/
 0.*/
 *.bak
 *~
+
+# Runtime lock and Python caches
+.case.lock
+__pycache__/
+*.pyc
+monitoring.csv
+monitoring.png

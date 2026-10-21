@@ -41,3 +41,15 @@ cylinderForceCoeffs
     writeInterval   1;
     log             yes;
 }
+
+// Foundation 14 writes separate Ux and Uy columns for a two-dimensional mesh.
+residuals
+{
+    type            residuals;
+    libs            ("libutilityFunctionObjects.so");
+    fields          (U p);
+    executeControl  timeStep;
+    executeInterval 1;
+    writeControl    timeStep;
+    writeInterval   1;
+}

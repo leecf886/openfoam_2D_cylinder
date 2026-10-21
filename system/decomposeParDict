@@ -1,5 +1,9 @@
 /*--------------------------------*- C++ -*----------------------------------*\
-| OpenFOAM Foundation 14: optional parallel decomposition                    |
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
@@ -8,6 +12,11 @@ FoamFile
     location    "system";
     object      decomposeParDict;
 }
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 4;
+numberOfSubdomains 8;
+
 method          scotch;
+
+
+// ************************************************************************* //

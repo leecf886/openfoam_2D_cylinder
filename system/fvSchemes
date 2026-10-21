@@ -23,7 +23,8 @@ gradSchemes
 divSchemes
 {
     default         none;
-    div(phi,U)      Gauss Linear;
+    div(phi,U)      Gauss linear;
+    div(div(phi,U)) Gauss linear; // potentialFoam -writep
     div((nuEff*dev2(T(grad(U))))) Gauss linear;
 }
 

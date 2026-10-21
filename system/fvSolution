@@ -11,6 +11,14 @@ FoamFile
 
 solvers
 {
+    Phi
+    {
+        solver          GAMG;
+        smoother        DICGaussSeidel;
+        tolerance       1e-10;
+        relTol          0;
+    }
+
     p
     {
         solver          GAMG;
@@ -49,4 +57,10 @@ PIMPLE
     nOuterCorrectors            2;
     nCorrectors                 2;
     nNonOrthogonalCorrectors    1;
+}
+
+// Used only by potentialFoam before the transient solver.
+potentialFlow
+{
+    nNonOrthogonalCorrectors 3;
 }
